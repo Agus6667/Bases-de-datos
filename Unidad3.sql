@@ -60,4 +60,4 @@ select * from t_empleado where month(fecha_contratacion) = 3;
 
 select concat(nombre, ' ', apellido) as nombre_completo from t_empleado;
 
-select concat(id, upper(left(trim(nombre), 1)), upper(left(trim(apellido), 1))) as codigo from t_empleado;
+select concat(id, upper(substring(trim(nombre), 1, 1)), upper(substring(trim(apellido), 1, 1))) as codigo from t_empleado;

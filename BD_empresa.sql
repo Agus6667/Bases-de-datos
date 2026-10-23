@@ -21,6 +21,7 @@ CREATE DATABASE empresa
 
 USE empresa;
 
+-- ----------------------------------------------------------------------
 -- 2. CREACION DE TABLAS
 --    Orden : primero las tablas MAESTRAS (sin dependencias),
 --    luego las tablas de DETALLE/TRANSACCIONALES (con FOREIGN KEY),

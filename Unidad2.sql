@@ -284,17 +284,3 @@ create index idx_usuario_nombre on t_usuario(nombre);
 -- sirve para mejorar el rendimiento de las consultas que buscan por nombre de usuario--
 -- para llamar el índice se puede usar la cláusula USE INDEX en la consulta, por ejemplo:
 select * from t_usuario use index (idx_usuario_nombre) where nombre = 'Juan Pérez'; 
-
--- Unidad 3
-
---funciones de fecha y hora
-now() -- devuelve la fecha y hora actual ejemplo: now() devuelve '2023-01-01 12:00:00'
-curdate() -- devuelve la fecha actual ejemplo: curdate() devuelve '2023-01-01'
-year() -- extrae el año de una fecha ejemplo: year('2023-01-01') devuelve 2023
-month() -- extrae el mes de una fecha ejemplo: month('2023-01-01') devuelve 1
-day() -- extrae el día de una fecha ejemplo: day('2023-01-01') devuelve 1
-datediff() -- calcula la diferencia entre dos fechas ejemplo: datediff('2023-01-01', '2022-12-31') devuelve 1
-
--- funciones numericas
-abs() -- devuelve el valor absoluto de un número ejemplo: abs(-5) devuelve 5
-round() -- redondea un número a un número específico de decimales ejemplo: round(3.14159, 2) devuelve 3.14

@@ -56,4 +56,8 @@ select nombre, YEAR(fecha_contratacion) as ano_contratacion from t_empleado;
 
 select nombre, round(salario, 2) as salario_redondeado from t_empleado;
 
-select id, nombre, apellido, salario, month(fecha_contratacion) as mes_contratacion from t_empleado where month(fecha_contratacion) = 3;
+select * from t_empleado where month(fecha_contratacion) = 3;
+
+select concat(nombre, ' ', apellido) as nombre_completo from t_empleado;
+
+select id, nombre, apellido, concat(trim(upper(substr(nombre, 1, 1))), lower(substr(nombre, 2))), upper(apellido)) as codigo_empleado from t_empleado;

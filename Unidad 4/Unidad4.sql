@@ -24,3 +24,9 @@ INSERT INTO t_venta VALUES
 
 --mostrar la cantidad de ventas por producto, precio y cantidad convertidos a decimal
 select producto, cast(precio as decimal(10,2)) * cast(cantidad as decimal(10,2)) as total_venta from t_venta;
+--mostrar los productos vendidos en el segundo semestre del año 2025(filtrar por rango de fechas)
+select * from t_venta where cast(fecha_venta as date) >= '2025-07-01' and cast(fecha_venta as date) <= '2025-12-31';
+-- genere un listado de productos, en donde se despliegue el nombre del producto y su precio, ordenado numericamente de menor a mayor por precio
+select producto, cast(precio as decimal(10,2)) as precio from t_venta order by cast(precio as decimal(10,2)) asc;
+--genere una salida de la tabla ventas con el producto, el precio con el simbolo $, la cantidad en entero y la fecha en formato dd/mm/yyyy
+select producto, concat('$', cast(precio as decimal(10,2))) as precio, cast(cantidad as signed) as cantidad, date_format(cast(fecha_venta as date), '%d/%m/%Y') as fecha from t_venta;
